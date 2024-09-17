@@ -1,0 +1,36 @@
+{% extends "common/base.html" %}
+
+{% block content %}
+
+<h2 class="text-2xl font-bold mb-4 text-center">Employee Details</h2>
+
+<div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-4 border-b border-gray-200">
+            <h3 class="text-lg font-semibold mb-2 text-gray-800">Name</h3>
+            <p class="text-gray-700">{{ employee.name }}</p>
+        </div>
+        <div class="p-4 border-b border-gray-200">
+            <h3 class="text-lg font-semibold mb-2 text-gray-800">Contact</h3>
+            <p class="text-gray-700">{{ employee.phone_number }}</p>
+        </div>
+        <div class="p-4 border-b border-gray-200">
+            <h3 class="text-lg font-semibold mb-2 text-gray-800">Designation</h3>
+            <p class="text-gray-700">{{ employee.designation }}</p>
+        </div>
+        <div class="p-4 border-b border-gray-200">
+            <h3 class="text-lg font-semibold mb-2 text-gray-800">Salary</h3>
+            <p class="text-gray-700">${{ employee.salary }}</p>
+        </div>
+        <div class="p-4 border-b border-gray-200">
+            <h3 class="text-lg font-semibold mb-2 text-gray-800">Address</h3>
+            <p class="text-gray-700">{{ employee.address }}</p>
+        </div>
+        <div class="p-4 border-b border-gray-200">
+            <h3 class="text-lg font-semibold mb-2 text-gray-800">Description</h3>
+            <p class="text-gray-700">{{ employee.description }}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

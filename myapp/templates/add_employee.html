@@ -1,0 +1,67 @@
+{% extends "common/base.html" %}
+
+{% block content %}
+    <div class="container mx-auto mt-8">
+        <div class="max-w-lg mx-auto bg-gray-200 shadow-lg rounded-lg px-8 py-6">
+            <h2 class="text-3xl font-bold mb-6 text-center">Add New Employee</h2>
+            
+            <form method="POST">
+                {% csrf_token %}
+                
+                <div class="mb-4">
+                    <label for="id_name" class="block text-gray-700 font-bold mb-2">Name</label>
+                    {{ form.name }}
+                    {% if form.name.errors %}
+                        <p class="text-red-500 text-sm">{{ form.name.errors }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="mb-4">
+                    <label for="id_address" class="block text-gray-700 font-bold mb-2">Address</label>
+                    {{ form.address }}
+                    {% if form.address.errors %}
+                        <p class="text-red-500 text-sm">{{ form.address.errors }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="mb-4">
+                    <label for="id_phone_number" class="block text-gray-700 font-bold mb-2">Phone Number</label>
+                    {{ form.phone_number }}
+                    {% if form.phone_number.errors %}
+                        <p class="text-red-500 text-sm">{{ form.phone_number.errors }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="mb-4">
+                    <label for="id_salary" class="block text-gray-700 font-bold mb-2">Salary</label>
+                    {{ form.salary }}
+                    {% if form.salary.errors %}
+                        <p class="text-red-500 text-sm">{{ form.salary.errors }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="mb-4">
+                    <label for="id_designation" class="block text-gray-700 font-bold mb-2">Designation</label>
+                    {{ form.designation }}
+                    {% if form.designation.errors %}
+                        <p class="text-red-500 text-sm">{{ form.designation.errors }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="mb-4">
+                    <label for="id_description" class="block text-gray-700 font-bold mb-2 center">Description</label>
+                    {{ form.description }}
+                    {% if form.description.errors %}
+                        <p class="text-red-500 text-sm">{{ form.description.errors }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="mt-6">
+                    <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg">
+                        Create
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
